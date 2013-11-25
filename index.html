@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+  <title>qubodup</title>
+  <meta charset="utf-8" />
+  <meta property="og:type" content="game" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="http://codeorigin.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/EaselJS/0.7.0/easeljs.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body id="body">
+<script>
+var colors = [
+  "#9D776F",
+  "#D4C06D",
+  "#6591B8",
+  "#113F63",
+  "#8AABD4",
+  "#FF6F46",
+  "#E78C93",
+  "#E96A19",
+  "#01A0E3",
+  "#71B64B",
+  "#AD5971",
+  "#FEF102",
+  "#8EC641",
+  "#ACD473",
+  "#FEF568",
+  "#771E46",
+  "#20135D",
+  "#2051AF",
+  "#455EBA",
+  "#CDEACD",
+  "#B4CFE5",
+  "#F4EADC",
+  "#F2ECD4",
+  "#AF843E",
+  "#E76C31",
+  "#281908",
+  "#4E2B27",
+  "#F7E858",
+  "#153563",
+  "#BBC2B9",
+  "#EFD5D4",
+  "#455EBA",
+  "#D6CAA7",
+  "#A6A4A0",
+  "#B1905F"
+]
+
+$("#body").css({backgroundColor: colors[Math.floor(Math.random()*colors.length)]});
+
+function colorChange() {
+  var timer = (Math.floor(Math.random() * 6) + 5) * 1000;
+  var color = colors[Math.floor(Math.random()*colors.length)]
+  $("#body").animate({
+    backgroundColor: color
+  }, timer, 'easeInQuint');
+  setTimeout(colorChange, timer);
+}
+
+colorChange();
+</script>
+</body>
+</html>
